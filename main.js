@@ -36,6 +36,7 @@ paroleproibite.push(parole.split(','));
 
 function censura(text, words){
   // words = ['serie', 'di', 'parole', 'da', 'censurare'];
+  var newtxt = '';
   for (var i = 0; i < text.length; i++) {
 
     for (var j = 0; j < words.length; j++) {
@@ -43,6 +44,8 @@ function censura(text, words){
       if (text[i] === words[j]){
 
         text[i] = 'xxx';
+
+
 
 
 
@@ -55,9 +58,10 @@ function censura(text, words){
 
 
     }
-    return text[i];
+    newtxt = newtxt + text[i];
   }
 
+  return newtxt;
 }
 
 
