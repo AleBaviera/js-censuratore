@@ -18,8 +18,8 @@ var testo = [];    //['prova', 'di', ' lungo', 'testo'];
 var paroleproibite = [];
 
 
-testo.push(txt.split(' ,'));
-paroleproibite.push(parole.split(','));
+testo.push(txt.split(' '));
+paroleproibite.push(parole.split(' '));
 // imposto ricerca parole con confronto elementi array
 
 
@@ -36,7 +36,8 @@ paroleproibite.push(parole.split(','));
 
 function censura(text, words){
   // words = ['serie', 'di', 'parole', 'da', 'censurare'];
-  var newtxt = '';
+  var newtxt = [];
+  
   for (var i = 0; i < text.length; i++) {
 
     for (var j = 0; j < words.length; j++) {
@@ -48,7 +49,7 @@ function censura(text, words){
 
 
 
-
+        // console.log('stampo text-i nella funzione e nell-if',text[i]);
       }
 
 
@@ -58,10 +59,12 @@ function censura(text, words){
 
 
     }
-    newtxt = newtxt + text[i];
+    // console.log('stampo text-i nella funzione',text[i]);
+    newtxt.push(text[i]);
+    // newtxt = newtxt + text[i];
   }
 
-  return newtxt;
+  return newtxt.join('');
 }
 
 
@@ -70,5 +73,5 @@ function censura(text, words){
 
 testo.join(' ');
 paroleproibite.join(' ');
-console.log('questi sono gli array che ho inserito' , testo, parole);
+console.log('questi sono gli array che ho inserito' , testo, paroleproibite);
 console.log(censura(txt, parole));
