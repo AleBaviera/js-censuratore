@@ -12,10 +12,12 @@
 
 
 // dichiaro var - array testo e array paroleproibite
-
-
-var testo = ['prova', 'di', ' lungo', 'testo'];
+var text = prompt('inserisci un testo');
+var testo = [];    //['prova', 'di', ' lungo', 'testo'];
 var paroleproibite = ['serie', 'di', 'parole', 'da', 'censurare'];
+
+
+testo.push(text.split(' ,'));
 
 // imposto ricerca parole con confronto elementi array
 
@@ -48,8 +50,10 @@ for (var i = 0; i < testo.length; i++) {
 
 
 
-    console.log(testo[i]);
+
 
   }
 }
 console.log(testo);
+
+console.log(testo.join(' '));
