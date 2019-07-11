@@ -12,13 +12,14 @@
 
 
 // dichiaro var - array testo e array paroleproibite
-var text = prompt('inserisci un testo');
+var txt = prompt('inserisci un testo');
+var parole = prompt('inserisci le parole proibite')
 var testo = [];    //['prova', 'di', ' lungo', 'testo'];
-var paroleproibite = ['serie', 'di', 'parole', 'da', 'censurare'];
+var paroleproibite = [];
 
 
-testo.push(text.split(' ,'));
-
+testo.push(txt.split(' ,'));
+paroleproibite.push(parole.split(','));
 // imposto ricerca parole con confronto elementi array
 
 
@@ -33,27 +34,37 @@ testo.push(text.split(' ,'));
       //  altrimenti
       //     stampa elemento di testo
 
+function censura(text, words){
+  // words = ['serie', 'di', 'parole', 'da', 'censurare'];
+  for (var i = 0; i < text.length; i++) {
 
-for (var i = 0; i < testo.length; i++) {
+    for (var j = 0; j < words.length; j++) {
 
-  for (var j = 0; j < paroleproibite.length; j++) {
+      if (text[i] === words[j]){
 
-    if (testo[i] === paroleproibite[j]){
+        text[i] = 'xxx';
 
-      testo[i] = 'xxx';
+
+
+      }
+
+
+
+
 
 
 
     }
-
-
-
-
-
-
-
+    return text[i];
   }
-}
-console.log(testo);
 
-console.log(testo.join(' '));
+}
+
+
+
+// console.log(testo);
+
+testo.join(' ');
+paroleproibite.join(' ');
+console.log('questi sono gli array che ho inserito' , testo, parole);
+console.log(censura(txt, parole));
