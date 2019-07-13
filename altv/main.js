@@ -9,23 +9,36 @@
 // se non vi viene immediato il farlo con una funzione, prima fate
 // funzionare lo script e poi vi preoccupate della questione “farlo diventare una funzione!
 
+//  provare a sviluppare tutti i controlli che possono venirvi in mente, provando a fare il PowerUser o UtenteStronzo (in italiano).
+// Esempi che abbiam preso in considerazione:
+// - se c’è punteggiatura nel testo?
+// - se c’è differenza di maiuscole-minuscole?
+// - se l’utente non mette del testo?
+// - etc. ect.
 
 
 
 function censura(text, words){   // funzione che riceve due stringhe come argomenti
                                       // restituisce stringa censored e num parole censored
+
+
   var cont = 0;
+
+  var w = words.toUpperCase();
   var arrText = text.split(' ');
-  var arrWords = words.split(' ');
- console.log(' nella funzione gli array',arrText, arrWords);
+  var arrWords = w.split(' ');
+
+  console.log(' nella funzione gli array',arrText, arrWords);
   for (var i = 0; i < arrText.length; i++) {
+    var t = arrText[i].toUpperCase();
 
+    if (arrWords.includes(t)){
 
-    if (arrWords.includes(arrText[i])){
-
-      arrText[i]= 'xxx';
+      t= 'xxx';
       cont++;
-      // console.log(arrText[i]);
+
+      arrText[i] = t;
+      console.log('questa è t ',t);
     }
 
   }
@@ -35,6 +48,8 @@ function censura(text, words){   // funzione che riceve due stringhe come argome
 
 
 }
+
+
 
 
 // dichiaro var - array testo e array paroleproibite
