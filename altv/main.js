@@ -22,7 +22,7 @@ function censura(text, words){   // funzione che riceve due stringhe come argome
                                       // restituisce stringa censored e num parole censored
                                       //  controllo di maiuscole/minuscole
                                       //  provo a controllare la punteggiatura con regexpr MA non torna il testo punteggiato
-                                      
+
   var cont = 0;
 
   var w = words.toUpperCase();
@@ -45,7 +45,8 @@ function censura(text, words){   // funzione che riceve due stringhe come argome
   }
   console.log(arrWords);
   // console.log();
-  return arrText.join(' ')+'ho censurato parole n.' + cont ;
+
+  return arrText.join(' ') + ' '+'ho censurato parole n.' + cont ;
 
 
 }
