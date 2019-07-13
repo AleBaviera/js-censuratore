@@ -20,12 +20,13 @@
 
 function censura(text, words){   // funzione che riceve due stringhe come argomenti
                                       // restituisce stringa censored e num parole censored
-
-
+                                      //  controllo di maiuscole/minuscole
+                                      //  provo a controllare la punteggiatura con regexpr MA non torna il testo punteggiato
+                                      
   var cont = 0;
 
   var w = words.toUpperCase();
-  var arrText = text.split(' ');
+  var arrText = text.split(/[  .,?!'']+/);
   var arrWords = w.split(' ');
 
   console.log(' nella funzione gli array',arrText, arrWords);
