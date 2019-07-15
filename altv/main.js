@@ -26,7 +26,7 @@ function censura(text, words){   // funzione che riceve due stringhe come argome
   var cont = 0;
 
   var w = words.toUpperCase();
-  var arrText = text.split(/[  .,?!'']+/);
+  var arrText = text.split(/([ .,?!'']+)/);
   var arrWords = w.split(' ');
 
   console.log(' nella funzione gli array',arrText, arrWords);
@@ -45,12 +45,12 @@ function censura(text, words){   // funzione che riceve due stringhe come argome
   }
   console.log(arrWords);
   // console.log();
+  
 
   return arrText.join(' ') + ' '+'ho censurato parole n.' + cont ;
 
 
 }
-
 
 
 
